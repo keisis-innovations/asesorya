@@ -3,14 +3,14 @@ const htmlmin = require('html-minifier')
 const now = String(Date.now())
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget('./styles/tailwind.config.js')
-  eleventyConfig.addWatchTarget('./styles/tailwind.css')
+  eleventyConfig.addWatchTarget('./assets/css/tailwind.config.js')
+  eleventyConfig.addWatchTarget('./assets/css/tailwind.css')
 
   eleventyConfig.addPassthroughCopy({
-    './node_modules/alpinejs/dist/cdn.js': './js/alpine.js',
+    './node_modules/alpinejs/dist/cdn.js': './assets/js/alpine.js',
   })
 
-  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("assets/img/*.{webp,svg}");
 
   eleventyConfig.addShortcode('version', function () {
     return now
@@ -32,4 +32,11 @@ module.exports = function (eleventyConfig) {
 
     return content
   })
+
+	return {
+    dir: {
+      input: 'src',
+      output: '_site',
+    }
+	};
 }
