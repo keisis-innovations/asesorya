@@ -1,12 +1,13 @@
 const htmlmin = require("html-minifier");
 const i18n = require("eleventy-i18n");
-const { EleventyI18nPlugin } = require("@11ty/eleventy");
 
 const now = String(Date.now())
 const en = require("./src/_data/i18n/en.json");
 const es = require("./src/_data/i18n/es.json");
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
+  const { EleventyI18nPlugin } = await import("@11ty/eleventy");
+
   eleventyConfig.addPlugin(i18n, {
     translations: { es, en },
     fallbackLanguageTag: "es",
