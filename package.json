@@ -1,8 +1,8 @@
 {
   "name": "AsesorYa.com",
   "scripts": {
-    "start": "eleventy --serve & npx tailwindcss -i assets/css/tailwind.css -c assets/css/tailwind.config.js -o _site/assets/css/styles.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i assets/css/tailwind.css -c assets/css/tailwind.config.js -o _site/assets/css/styles.css --minify"
+    "start": "eleventy --serve & npx tailwindcss -i src/assets/css/tailwind.css -c src/assets/css/tailwind.config.js -o _site/assets/css/styles.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i src/assets/css/tailwind.css -c src/assets/css/tailwind.config.js -o _site/assets/css/styles.css --minify"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

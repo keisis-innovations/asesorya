@@ -22,15 +22,15 @@ module.exports = function (eleventyConfig) {
     errorMode: "allow-fallback"
   });
 
-  eleventyConfig.addWatchTarget("./assets/css/tailwind.config.js")
-  eleventyConfig.addWatchTarget("./assets/css/tailwind.css")
-  eleventyConfig.addWatchTarget("./src/_data/i18n/")
+  eleventyConfig.addWatchTarget("src/assets/css/tailwind.config.js")
+  eleventyConfig.addWatchTarget("src//assets/css/tailwind.css")
+  eleventyConfig.addWatchTarget("src/_data/i18n/")
 
+  eleventyConfig.addPassthroughCopy({ "src/assets/img/*.{webp,svg}": "assets/img" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/cdn.js": "./assets/js/alpine.js",
   })
-  eleventyConfig.addPassthroughCopy("assets/img/*.{webp,svg}");
-  // eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
 
   eleventyConfig.addShortcode("version", function () {
     return now
