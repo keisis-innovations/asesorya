@@ -9,3 +9,7 @@ This is built with 11ty, tailwind and alpinejs. It is hosted on Github Pages
 3. run `asdf install` to install Node.js
 4. run `npm install` to install dependencies
 5. run `npm run start` to run 11ty
+
+### I18N
+
+* it's using the [eleventy-i18n](https://github.com/mathieuprog/eleventy-i18n)
